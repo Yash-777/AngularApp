@@ -1,0 +1,63 @@
+
+<div *ngIf="student">
+  <!-- <div>
+
+    // @Input() student: MyStudents; // https://angular.io/api/core/Input
+      
+      <h2>{{ student.name | uppercase }} Details</h2>
+      <div><span>id: </span>{{student.id}}</div>
+      <div>
+        <label>name:
+          <input [(ngModel)]="student.name" placeholder="name" #newName="ngModel" required/>
+        </label>
+      </div>
+    // <p> user works! With {{title}} : {{id}} </p>
+  </div> -->
+
+  <div>
+      <!-- Can't bind to 'formGroup' since it isn't a known property of 'form'
+        import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+        @NgModule({ imports: [BrowserModule, FormsModule, ReactiveFormsModule] })
+  
+        UserComponent.html:30 ERROR Error: formGroup expects a FormGroup instance. Please pass one in.
+  
+      Example:
+      <div [formGroup]="myGroup">
+        <input formControlName="firstName">
+      </div>
+      In your class:
+      this.myGroup = new FormGroup({
+         firstName: new FormControl()
+      }); -->
+      <form [formGroup]="myFormGroup" (submit)="formGroup_Update()">
+        <div >
+          <label for="nameControl">Username</label>
+          <!-- [(ngModel)] syntax, which makes binding the form to the model easy. « [(ngModel)]="student.name"
+            to remove this use: {{model.name}} « {student.name}
+  
+            No need to set required or minlength in template, we handle thid in the component.
+          -->
+          <input type="text" formControlName='nameControl' value='{{student.name}}' #spyEvent/>
+          
+          <small *ngIf="myFormGroup.get('nameControl').hasError('required')">Required!</small>
+          <small *ngIf="myFormGroup.get('nameControl').hasError('minlength')">Minimum 3 chars</small>
+          
+        </div>
+        
+        <div>
+          <button [disabled]="(!myFormGroup.get('nameControl').valid) || (myFormGroup.get('nameControl').value == student.name)" >Update Value</button>
+        </div>
+      </form>
+      <div>
+        <!-- https://angular.io/guide/forms#track-control-state-and-validity-with-ngmodel -->
+        <p>Track control state and validity with ngModel
+          <br>TODO: remove this: {{spyEvent.className}}
+        </p>
+        <p>
+          <!-- https://angular.io/guide/reactive-forms#taking-a-look-at-the-form-model -->
+          Form modellink - Form Values : {{ myFormGroup.value | json }}
+        </p>
+      </div>
+    </div>
+
+</div>

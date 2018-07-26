@@ -1,0 +1,25 @@
+
+<div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-6" >
+           Filter by Name: <input type="text" [(ngModel)]="searchText" 
+                   class="form-control" placeholder="Search By Category" />
+        </div>
+    </div>
+        
+    <h2>Present are Students</h2>
+    <ul class="students">
+    <li *ngFor="let student of students | jsonFilterBy:[searchText, 'name'] " >
+        <a *ngIf="student" routerLink="/users/update/{{student.id}}">
+            <span class="badge">{{student.id}}</span> {{student.name | uppercase}}
+        </a>
+    </li>
+    </ul>
+</div>
+
+<!-- <p>users works!</p> -->
+  <!-- https://stackblitz.com/angular/lbnakmokjjx?file=src%2Fapp%2Fheroes%2Fheroes.component.html 
+        <span class="badge">{{hero.id}}</span> {{hero.name}} 
+    <a routerLink="/users/{{student.id}}">
+    -->

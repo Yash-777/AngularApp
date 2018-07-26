@@ -1,0 +1,105 @@
+<!-- <p>home works!</p> -->
+
+<hr>
+
+<div>
+  <!-- Input form Component. -->
+  <button (click)="showDataBinding()">{{showBindingEleValue}}</button>
+  <div *ngIf="showBindingEle">
+    <span>{{strData | reverseStr}}</span>
+    <br />
+    <input type="text" value="{{strData}}" />
+    <br />
+    <!-- Array data as String, Array.toString() - If you access with out any loops like: *ngFor -->
+    <span>{{arrayData | json }}</span>
+    <br />
+    <input type="text" value="{{this.arrayData}}" />
+    <br />
+    <!-- If the var is not avilable in child then only search in parent component -->
+    <input type="text" value="{{this.arrayData_parent}}" />
+    <br />
+
+    <!-- <div  [items]="['google','stack','overflow']"></div> -->
+    <div *ngFor="let item of arrayData">
+      <span>{{item}}</span>
+    </div>
+  </div>
+</div>
+<!-- Input form Component. -->
+
+<hr>
+
+<div>
+  <!-- https://angular-2-training-book.rangle.io/v/v2.3/handout/components/app_structure/responding_to_component_events.html-->
+  <button (click)="increment()">Increment</button>
+  <b>Count: {{num}}</b>
+</div>
+
+<hr>
+
+<div>
+  <!-- Added ViewdelayDirective in AppMoudle 
+          « https://www.concretepage.com/angular-2/angular-2-custom-structural-directive-example -->
+
+  <h1>My First Attribute Directive : </h1>
+  <div>
+    Pick a highlight color
+    <b>«</b>
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+  </div>
+  <div class="_8woey89" [appHighlightElement]="'Green'" >
+    <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" stroke="none" class="_14l5gp41">
+      <g>
+        <path d="M9.707 8.707a.999.999 0 0 0 0-1.414C9.575 7.161 8.347 6 6 6 3.653 6 2.425 7.161 2.293 7.293a.992.992 0 0 0-.005 1.396 1.007 1.007 0 0 0 1.408.029C3.727 8.689 4.481 8 6 8c1.52 0 2.273.689 2.293.707a.997.997 0 0 0 1.414 0m12 0a.999.999 0 0 0 0-1.414C21.575 7.161 20.347 6 18 6c-2.347 0-3.575 1.161-3.707 1.293a.992.992 0 0 0-.005 1.396 1.006 1.006 0 0 0 1.407.029C15.727 8.689 16.481 8 18 8c1.52 0 2.273.689 2.293.707a.997.997 0 0 0 1.414 0M12 19c-7.53 0-9.8-4.367-9.894-4.553a1.001 1.001 0 0 1 1.786-.902C3.974 13.704 5.792 17 12 17c6.226 0 8.037-3.314 8.111-3.456a1.007 1.007 0 0 1 1.344-.43.998.998 0 0 1 .441 1.333C21.802 14.633 19.531 19 12 19"
+          fill-rule="evenodd"></path>
+      </g>
+    </svg>
+  </div>
+
+  <span [appHighlightElement]="color">Highlight me!</span>
+  <br />
+  <span [appHighlightElement]="color" defaultColor="violet"> Highlight me too! </span>
+  <br />
+  <span [appHighlightElement]="'yellow'">Highlighted in yellow [fixed]</span>
+  <br />
+  <span appHighlightElement="orange">Highlighted in orange [fixed]</span>
+
+  <hr>
+
+  <h1>Structural Directives</h1>
+  <div>
+    Show message after
+    <b>«</b>
+    <input type="radio" name="rad2" (click)="showCpDelay= true; delayInSec = 2000"> 2 Seconds
+    <input type="radio" name="rad2" (click)="showCpDelay= true; delayInSec = 5000"> 5 Seconds
+    <input type="radio" name="rad2" (click)="showCpDelay= true; delayInSec = 7000"> 7 Seconds
+  </div>
+  <br/>
+  <div *appViewdelay="showCpDelay">
+    <div *appViewdelay="delayInSec">
+      <b> Show View Delay Directive. </b>
+
+      <!-- https://www.w3schools.com/css/css3_animations.asp -->
+      <div id="animated_div">CSS</div>
+    </div>
+  </div>
+
+  <hr>
+</div>
+
+<hr>
+
+<!-- https://css-tricks.com/snippets/css/typewriter-effect/ -->
+<h1 class="typewriter">
+  <!-- <a href="" class="typewrite" data-period="2000" data-type="['1', '2']]"> -->
+  <a href="" class="typewrite">
+    <span class="wrap"></span>
+  </a>
+</h1>
+
+<!-- <ul class="navigation"> https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    <li><a href="#">Home</a></li> <li><a href="#">About</a></li> <li><a href="#">Products</a></li> <li><a href="#">Contact</a></li>
+</ul> -->

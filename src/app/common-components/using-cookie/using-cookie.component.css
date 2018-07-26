@@ -1,0 +1,37 @@
+/* Footer for Cross Browser cookie acceptence « https://files.fm/ */
+#footer_bottom_floating_line {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10001;
+    padding: 0 10px 10px;
+    box-sizing: border-box;
+  }
+  #footer_bottom_floating_line__cookies {
+    display: inline-block;
+    background: #dadfe06e;
+    border: 2px solid rgba(191, 194, 195, 0.27);
+    color: #00000099;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    max-width: calc(100% - 300px);
+    font-weight: 700;
+  }
+  #footer_bottom_floating_line__cookies__text {
+    margin-right: 10px;
+  }
+  #footer_bottom_floating_line__cookies__ok_btn {
+    display: inline-block;
+    cursor: pointer;
+    padding: 1px 10px;
+    background-color: #beccda9e;
+    color: #0776f7cc;
+    font-weight: 700;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+  }

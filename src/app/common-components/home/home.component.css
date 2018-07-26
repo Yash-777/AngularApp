@@ -1,0 +1,98 @@
+ 
+#animated_div {
+    width:70px;
+    height:47px;
+    background: #92B901;
+    color: #ffffff;
+    position: relative;
+    font-weight:bold;
+    font-size:20px;
+    padding:10px;
+    animation:animated_div 5s 1;
+    -moz-animation:animated_div 5s 1;
+    -webkit-animation:animated_div 5s 1;
+    -o-animation:animated_div 5s 1;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+}
+    
+    @keyframes animated_div {
+        0% {transform: rotate(0deg);left:0px;}
+        25% {transform: rotate(20deg);left:0px;}
+        50% {transform: rotate(0deg);left:500px;}
+        55% {transform: rotate(0deg);left:500px;}
+        70% {transform: rotate(0deg);left:500px;background:#1ec7e6;}
+        100% {transform: rotate(-360deg);left:0px;}
+    }
+    
+    @-webkit-keyframes animated_div {
+        0% {-webkit-transform: rotate(0deg);left:0px;}
+        25% {-webkit-transform: rotate(20deg);left:0px;}
+        50% {-webkit-transform: rotate(0deg);left:500px;}
+        55% {-webkit-transform: rotate(0deg);left:500px;}
+        70% {-webkit-transform: rotate(0deg);left:500px;background:#1ec7e6;}
+        100% {-webkit-transform: rotate(-360deg);left:0px;}
+    }
+    
+    @-moz-keyframes animated_div {
+        0%  {-moz-transform: rotate(0deg);left:0px;}
+        25% {-moz-transform: rotate(20deg);left:0px;}
+        50%  {-moz-transform: rotate(0deg);left:500px;}
+        55%  {-moz-transform: rotate(0deg);left:500px;}
+        70%  {-moz-transform: rotate(0deg);left:500px;background:#1ec7e6;}
+        100% {-moz-transform: rotate(-360deg);left:0px;}
+    }
+    
+    @-o-keyframes animated_div {
+        0% {transform: rotate(0deg);left:0px;}
+        25% {transform: rotate(20deg);left:0px;}
+        50%  {transform: rotate(0deg);left:500px;}
+        55%  {transform: rotate(0deg);left:500px;}
+        70%  {transform: rotate(0deg);left:500px;background:#1ec7e6;}
+        100% {transform: rotate(-360deg);left:0px;}
+    }
+
+/* https://css-tricks.com/snippets/css/typewriter-effect/ */
+
+/* DEMO-SPECIFIC STYLES */
+h1.typewriter > a {
+    color:green;
+    text-decoration: none;
+    border-right: .15em solid orange; /* The typwriter cursor */
+
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+._8woey89 {
+    -webkit-box-pack: center;
+    display: flex;
+    justify-content: center;
+    margin: 24px 0px 0px;
+    padding: 0px;
+    
+
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+
+
+}

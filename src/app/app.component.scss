@@ -1,0 +1,48 @@
+div#headerComp {
+    color:#545454;
+    background:#02A8F4;
+    padding:15px;
+    box-shadow:2px 2px 2px 0 rgba(0, 0, 0, 0.3);
+    height: 35px;
+
+    div:first-child {
+        color: blue;
+        float: left;
+        width: 30%;
+
+        img:first-child {
+            float: left;
+            margin: 1px;
+            padding: 3px;
+        }
+    }
+
+    div:last-child {
+        float: right;
+        width: 70%;
+
+        h1:first-child {
+            color: #369;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 1px;
+            font-size: xx-large;
+        }
+    }
+}
+// :nth-child() selector. « https://css-tricks.com/extremely-handy-nth-child-recipes-sass-mixins/
+// For last 3 items, You can use :nth-last-child(-n + 3) to select the last three.
+// Similarly, you can use :nth-last-child(n + 4) to select all children except the last three.
+li:nth-last-child(-n + 3) {
+    color: red;
+}
+// the index of the first child is 1, odd - 1,3,5,7... ,even - 2,4,8,...
+p:nth-child(odd) {
+    background: red;
+}
+p:nth-child(even) {
+    background: blue;
+}
+// Multiples of 3 = 3,6,9
+p:nth-child(3n+0) {
+    background: red;
+}

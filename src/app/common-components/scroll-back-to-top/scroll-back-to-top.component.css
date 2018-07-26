@@ -1,0 +1,44 @@
+#back-to-top.affix {
+    /* keeps it on the bottom once in view */
+    position: fixed;
+    bottom: 18px;
+    right: 10px;
+    
+    z-index: 2147483640;
+}
+#back-to-top.affix-top {
+    /* allows it to "slide" up into view */
+    position: absolute;
+    bottom: -82px;
+    right: 10px;
+
+    visibility: hidden;
+}
+
+#back-to-top > span {
+    display: inline-block;
+    cursor: pointer;
+    padding: 1px 10px;
+    background-color: #beccda9e;
+    color: #0776f7cc;
+    font-weight: 700;
+    border-radius: 2px;
+
+    /* color: #FFFFFF;
+    text-decoration: none;
+    background-color: #931C22; */
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-chevron-up:before {
+    content: "\e113";
+}
